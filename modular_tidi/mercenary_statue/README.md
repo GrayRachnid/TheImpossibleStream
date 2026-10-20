@@ -2,7 +2,7 @@
 
 **Tag:** `MERCENARY_STATUE`
 
-**Created In:**
+**Created In:** https://github.com/Shadow-Fragger-Metaclique-Gang/TheImpossibleDream/pull/71
 
 **Major changes:**
 
@@ -14,7 +14,6 @@ Automatic roster registration for the Mercenary statue.
     - Removes Mercenaries and Wretches from the roster when they far-travel.
     - Hitting the statue with a silver coin (ziliqua, 5 mammons) consumes one coin and reveals the Wretch roster to everyone for 5 minutes. There is no UI button for it, and messaging stays restricted to Bathhouse staff.
     - Adds a discreet mention of the silver slot to the statue description.
-    - Gives the Merchant's Mercenary their Merchant key instead of registering them.
 - `code/statue_preferences.dm`: character-creator pre-sets, saved per character slot.
     - Wretches (Villain tab): nom de guerre (empty keeps the class-based alias) and description.
     - Mercenaries (Descriptors tab): message only.
