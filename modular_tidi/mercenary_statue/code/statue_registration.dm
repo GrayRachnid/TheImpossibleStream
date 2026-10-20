@@ -1,7 +1,4 @@
 /obj/structure/roguemachine/talkstatue/mercenary
-	/* // SURREALIS-EDIT - ORIGINAL
-	desc = "A gilbranze warrior erupts from the stone bell that homes them; foreign garb, horns of stone, claws of deathly metals. The perfect central-point of a proud warrior extrinsic to this place and tyme."
-	*/ // SURREALIS-EDIT - ORIGINAL
 	desc = "A gilbranze warrior erupts from the stone bell that homes them; foreign garb, horns of stone, claws of deathly metals. The perfect central-point of a proud warrior extrinsic to this place and tyme. The base bears a discreet silver slot, said to make the stone more forthcoming."
 	var/static/public_wretch_roster_until = 0
 
@@ -91,7 +88,7 @@
 		"nom_de_guerre" = nom_de_guerre,
 		"auto_nom" = auto_nom,
 	)
-	to_chat(H, span_boldnotice("<font color='#9c4dcc'>The statue gives me a name for the Wretch roster: <b>[nom_de_guerre]</b>.</font>"))
+	to_chat(H, span_boldnotice("<font color='#9c4dcc'>The mercenary statue gives me a name for the Wretch roster: <b>[nom_de_guerre]</b>.</font>"))
 	return TRUE
 
 /obj/structure/roguemachine/talkstatue/mercenary/proc/register_adventurer(mob/living/carbon/human/H)
@@ -105,7 +102,7 @@
 		"mob" = H,
 		"message" = P.statue_adv_message || "",
 	)
-	to_chat(H, span_boldnotice("<font color='#4da6ff'>The statue records my name among the adventurers of the realm.</font>"))
+	to_chat(H, span_boldnotice("<font color='#4da6ff'>The mercenary statue records my name among the adventurers of the realm.</font>"))
 	return TRUE
 
 /obj/structure/roguemachine/talkstatue/mercenary/proc/unregister_far_traveler(mob/living/carbon/human/H)
