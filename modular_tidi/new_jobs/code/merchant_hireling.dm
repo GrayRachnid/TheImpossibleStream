@@ -1,5 +1,5 @@
 /datum/job/roguetown/merchant_hireling
-	title = "Merchant's Mercenary"
+	title = "Merchant Mercenary"
 	flag = MERCENARY
 	department_flag = ATC
 	faction = "Station"

@@ -11,6 +11,7 @@ Files are split by job category.
 - `code/retinue.dm`: Knights get 2 slots and Squires 3 (no `GUARDSMAN` trait); Squires gain Expert in their chosen weapon.
 - `code/garrison.dm`: no `GUARDSMAN` trait on Sergeants and Men-at-Arms, who have their worn gambeson, iron maille and gorget swapped in `post_equip` for a padded gambeson, steel haubergeon and steel gorget, and receive a steel mask (worn if the face is free, otherwise carried). The original Warden is disabled.
 - `code/inquisition.dm`: Orthodoxists (Practicus) get 4 slots.
+- `code/inquisition_rooms.dm`: Otavan Embassy bedroom IV and V keys (`OEB4`, `OEB5`), added to the Inquisition room key vendor.
 - `code/church.dm`: Templars get 2 slots. Hiereis and Hetaeroi are removed from the Acolyte and Templar subclass lists (they are Abyssor-only, now Korybantes).
 - `code/burghers.dm`: a Malum Guildmaster gets T4 miracles, Ritualist, Expert holy skill, a ritual chalk and a Malum psicross on their wrist.
 - `code/courtier.dm`: every Jester gets Xylix's T4 miracles and Expert holy skill whatever their patron. A Xylix Jester also gets Ritualist, a ritual chalk a Xylix cross on the wrist.

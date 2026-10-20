@@ -13,6 +13,8 @@ Roles that do not exist in the core job definitions.
     - Warden of the Wilds: Dendor-only, 2 slots, with its own loadout (no houndstone or Garrison keyring), T2 miracles, and a Dendor scythe or bodkin quiver by weapon path.
     - Korybantes: Abyssor's Hiereis and Hetaeroi paths, 3 slots with the Seer. The Maenad, Korybantes and Seer all gain the Azure Native trait.
     - Druid is displayed as Maenad and Painter as Seer (Oracle subclass), and both move to this department.
+- `code/landmarks.dm`: roundstart spawn landmarks for the Warden of the Wilds, Korybantes, Merchant Mercenary and Dungeoneer.
+- `code/abyssor_cult_lock.dm`: the `abyssor_cult` key.
 - `code/inquisition_dungeoneer.dm`: the Dungeoneer (placeholder name), a single-class Inquisition job. Stats weigh 7 (STR and SPD count double) with a speed penalty, and the class is forced to medium armor (replacing the Adjudicator's heavy armor trait). Otherwise it shares the Adjudicator's gear, skills, languages, T2 miracles, arrival slip, music and helmet/oath choices, but is forced to take a silver shortsword.
 - `code/merchant_hireling.dm`: the Merchant's Mercenary, with the Mercenary's traits, stats and classes, a Merchant key, and no statue registration.
 

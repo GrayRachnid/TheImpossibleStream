@@ -131,7 +131,7 @@
 			assigned_job = H.mind.assigned_role
 		else
 			assigned_job = SSjob.GetJob(H.mind.assigned_role)
-	if(assigned_job?.title == "Merchant's Mercenary")
+	if(assigned_job?.title == "Merchant Mercenary")
 		var/turf/drop_turf = get_turf(H)
 		var/obj/item/roguekey/merchant/merchant_key = new(drop_turf)
 		if(!istype(H.back, /obj/item/storage) || !SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_INSERT, merchant_key, H, TRUE, FALSE))

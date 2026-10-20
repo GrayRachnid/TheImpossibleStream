@@ -199,6 +199,7 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 /datum/advclass/herald/post_equip(mob/living/carbon/human/H)
 	. = ..()
 	H.strip_church_keys()
+	H.give_abyssor_cult_key()
 	addtimer(CALLBACK(src, PROC_REF(apply_gendered_title), H), 1)
 
 // Primal Divines are not part of the Church, so they carry none of its keyrings without having to make core file edits.
@@ -218,10 +219,12 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 /datum/advclass/templar/maris/post_equip(mob/living/carbon/human/H)
 	. = ..()
 	H.strip_church_keys()
+	H.give_abyssor_cult_key()
 
 /datum/advclass/voice/post_equip(mob/living/carbon/human/H)
 	. = ..()
 	H.strip_church_keys()
+	H.give_abyssor_cult_key()
 
 /datum/job/roguetown/painter
 	display_title = "Seer"
