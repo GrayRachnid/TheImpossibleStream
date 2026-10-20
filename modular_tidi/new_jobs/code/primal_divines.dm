@@ -135,6 +135,7 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 				r_hand = /obj/item/rogueweapon/halberd/bardiche/scythe
 				backl = /obj/item/rogueweapon/scabbard/gwstrap
 				l_hand = /obj/item/gun/ballistic/revolver/grenadelauncher/sling
+				H.adjust_skillrank_up_to(/datum/skill/combat/polearms, SKILL_LEVEL_EXPERT, TRUE)
 				H.adjust_skillrank_up_to(/datum/skill/combat/slings, SKILL_LEVEL_EXPERT, TRUE)
 				H.change_stat(STATKEY_SPD, -1)
 				H.change_stat(STATKEY_STR, 1)
