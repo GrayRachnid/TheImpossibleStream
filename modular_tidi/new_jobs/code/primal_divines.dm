@@ -15,6 +15,10 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 	job_traits = list(TRAIT_SEEDKNOW, TRAIT_OUTDOORSMAN, TRAIT_RITUALIST, TRAIT_HOMESTEAD_EXPERT, TRAIT_WOODWALKER, TRAIT_EXPERT_HUNTER, TRAIT_AZURENATIVE)
 	min_pq = 0
 
+/datum/advclass/druid/post_equip(mob/living/carbon/human/H)
+	. = ..()
+	H.strip_church_keys()
+
 // The original Warden is disabled in JOB_OVERRIDES. this is its Dendor replacement.
 /datum/job/roguetown/wilds_warden
 	title = "Warden of the Wilds"
@@ -178,7 +182,7 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 	outfit = /datum/outfit/job/roguetown/monk
 	advclass_cat_rolls = list(CTAG_ACOLYTE = 2, CTAG_TEMPLAR = 2)
 	class_categories = TRUE
-	job_traits = list(TRAIT_RITUALIST, TRAIT_STEELHEARTED, TRAIT_CLERGY, TRAIT_AZURENATIVE)
+	job_traits = list(TRAIT_RITUALIST, TRAIT_STEELHEARTED, TRAIT_AZURENATIVE)
 	advjob_examine = TRUE
 	job_subclasses = list(
 		/datum/advclass/herald,
@@ -194,7 +198,14 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 
 /datum/advclass/herald/post_equip(mob/living/carbon/human/H)
 	. = ..()
+	H.strip_church_keys()
 	addtimer(CALLBACK(src, PROC_REF(apply_gendered_title), H), 1)
+
+// Primal Divines are not part of the Church, so they carry none of its keyrings without having to make core file edits.
+/mob/living/carbon/human/proc/strip_church_keys()
+	for(var/obj/item/storage/keyring/K in GetAllContents(/obj/item/storage/keyring))
+		if(istype(K, /obj/item/storage/keyring/acolyte) || istype(K, /obj/item/storage/keyring/church))
+			qdel(K)
 
 /datum/advclass/herald/proc/apply_gendered_title(mob/living/carbon/human/H)
 	if(QDELETED(H))
@@ -204,10 +215,18 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 /datum/advclass/templar/maris
 	class_select_category = "Templar"
 
+/datum/advclass/templar/maris/post_equip(mob/living/carbon/human/H)
+	. = ..()
+	H.strip_church_keys()
+
+/datum/advclass/voice/post_equip(mob/living/carbon/human/H)
+	. = ..()
+	H.strip_church_keys()
+
 /datum/job/roguetown/painter
 	display_title = "Seer"
 	department_flag = PRIMAL_DIVINES
 	selection_color = JCOLOR_PRIMAL_DIVINES
 	allowed_patrons = list(/datum/patron/divine/abyssor)
-	job_traits = list(TRAIT_WATERBREATHING, TRAIT_RITUALIST, TRAIT_CLERGY, TRAIT_AZURENATIVE)
+	job_traits = list(TRAIT_WATERBREATHING, TRAIT_RITUALIST, TRAIT_AZURENATIVE)
 	min_pq = 0
