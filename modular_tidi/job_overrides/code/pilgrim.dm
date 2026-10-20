@@ -3,9 +3,7 @@
 
 /datum/advclass/levy/post_equip(mob/living/carbon/human/H)
 	. = ..()
-	var/obj/item/roguekey/warden/tower_key = new(get_turf(H))
-	if(!istype(H.back, /obj/item/storage) || !SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_INSERT, tower_key, H, TRUE, FALSE))
-		tower_key.forceMove(get_turf(H))
+	H.equip_to_slot_if_possible(new /obj/item/roguekey/warden(get_turf(H)), SLOT_IN_BACKPACK, FALSE, TRUE, FALSE, TRUE, TRUE)
 
 // Everyone except Pestra.
 /datum/advclass/witch

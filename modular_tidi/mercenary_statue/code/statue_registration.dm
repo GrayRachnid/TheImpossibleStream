@@ -132,10 +132,7 @@
 		else
 			assigned_job = SSjob.GetJob(H.mind.assigned_role)
 	if(assigned_job?.title == "Merchant Mercenary")
-		var/turf/drop_turf = get_turf(H)
-		var/obj/item/roguekey/merchant/merchant_key = new(drop_turf)
-		if(!istype(H.back, /obj/item/storage) || !SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_INSERT, merchant_key, H, TRUE, FALSE))
-			merchant_key.forceMove(drop_turf)
+		give_merchant_keyring(H)
 		return FALSE
 	if(assigned_job?.title != "Mercenary")
 		return FALSE

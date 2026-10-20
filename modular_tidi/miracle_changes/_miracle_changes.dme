@@ -1,1 +1,2 @@
 #include "code\patron_miracles.dm"
+#include "code\bishop_pack.dm"

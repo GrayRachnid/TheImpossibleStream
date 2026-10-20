@@ -1,3 +1,5 @@
+#define CTAG_KORYBANTES "CAT_KORYBANTES" // Korybantes class selector
+
 GLOBAL_LIST_INIT(primal_divines_positions, list(
 	"Druid",
 	"Warden of the Wilds",
@@ -15,9 +17,50 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 	job_traits = list(TRAIT_SEEDKNOW, TRAIT_OUTDOORSMAN, TRAIT_RITUALIST, TRAIT_HOMESTEAD_EXPERT, TRAIT_WOODWALKER, TRAIT_EXPERT_HUNTER, TRAIT_AZURENATIVE)
 	min_pq = 0
 
-/datum/advclass/druid/post_equip(mob/living/carbon/human/H)
-	. = ..()
-	H.strip_church_keys()
+/datum/advclass/druid
+	outfit = /datum/outfit/job/roguetown/primal_divines/druid
+
+/datum/outfit/job/roguetown/primal_divines/druid
+	name = "Druid"
+	jobtype = /datum/job/roguetown/druid
+	allowed_patrons = list(/datum/patron/divine/dendor)
+	has_loadout = TRUE
+
+/datum/outfit/job/roguetown/primal_divines/druid/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.adjust_blindness(-3)
+	belt = /obj/item/storage/belt/rogue/leather/rope/upgraded
+	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
+	beltr = /obj/item/flashlight/flare/torch/lantern
+	beltl = /obj/item/rogueweapon/whip
+	backl = /obj/item/storage/backpack/rogue/satchel
+	backr = /obj/item/rogueweapon/woodstaff
+	mask = /obj/item/flowercrown/briar
+	wrists = /obj/item/clothing/neck/roguetown/psicross/dendor
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/druid
+	shirt = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
+	shoes = /obj/item/clothing/shoes/roguetown/sandals
+
+	var/helms = list("Briar Mask (Classic)","Saiga Skull","Antler Hood")
+	var/helm_choice = input(H, "Choose your HEADWEAR.", "DENDOR. FATHER. SPIRIT-GUIDE.") as anything in helms
+	switch(helm_choice)
+		if("Briar Mask (Classic)")
+			head = /obj/item/clothing/head/roguetown/dendormask
+		if("Saiga Skull")
+			head = /obj/item/clothing/head/roguetown/helmet/leather/saiga/druid
+		if("Antler Hood")
+			head = /obj/item/clothing/head/roguetown/antlerhood
+
+	backpack_contents = list(/obj/item/ritechalk, /obj/item/needle/thorn)
+
+	H.ambushable = FALSE
+
+	H.AddComponent(/datum/component/wise_tree_alert)
+	var/datum/devotion/C = new /datum/devotion(H, H.patron)
+	C.grant_miracles(H, cleric_tier = CLERIC_T4, passive_gain = CLERIC_REGEN_MAJOR, start_maxed = TRUE)
+	H.mind?.RemoveSpell(/datum/action/cooldown/spell/miracle/heal)
+	if(H.mind)
+		SStreasury.give_money_account(ECONOMIC_DESTITUTE, H, "Cult Funding.")
 
 // The original Warden is disabled in JOB_OVERRIDES. this is its Dendor replacement.
 /datum/job/roguetown/wilds_warden
@@ -179,9 +222,7 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 	spawn_positions = 2
 	tutorial = "You are a Korybantes of Abyssor, serving the Primal Divines beyond the Pentacle's Temple. You may walk the path of a Hiereis or a Hetaeroi, and your duties are to the faithful of the Deep."
 	allowed_patrons = list(/datum/patron/divine/abyssor)
-	outfit = /datum/outfit/job/roguetown/monk
-	advclass_cat_rolls = list(CTAG_ACOLYTE = 2, CTAG_TEMPLAR = 2)
-	class_categories = TRUE
+	advclass_cat_rolls = list(CTAG_KORYBANTES = 2)
 	job_traits = list(TRAIT_RITUALIST, TRAIT_STEELHEARTED, TRAIT_AZURENATIVE)
 	advjob_examine = TRUE
 	job_subclasses = list(
@@ -194,19 +235,12 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 	round_contrib_points = 2
 
 /datum/advclass/herald
-	class_select_category = "Acolyte"
+	outfit = /datum/outfit/job/roguetown/primal_divines/hiereis
+	category_tags = list(CTAG_ACOLYTE, CTAG_KORYBANTES)
 
 /datum/advclass/herald/post_equip(mob/living/carbon/human/H)
 	. = ..()
-	H.strip_church_keys()
-	H.give_abyssor_cult_key()
 	addtimer(CALLBACK(src, PROC_REF(apply_gendered_title), H), 1)
-
-// Primal Divines are not part of the Church, so they carry none of its keyrings without having to make core file edits.
-/mob/living/carbon/human/proc/strip_church_keys()
-	for(var/obj/item/storage/keyring/K in GetAllContents(/obj/item/storage/keyring))
-		if(istype(K, /obj/item/storage/keyring/acolyte) || istype(K, /obj/item/storage/keyring/church))
-			qdel(K)
 
 /datum/advclass/herald/proc/apply_gendered_title(mob/living/carbon/human/H)
 	if(QDELETED(H))
@@ -214,17 +248,124 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 	H.advjob = (H.gender == FEMALE) ? "Hiereiai" : "Hierius"
 
 /datum/advclass/templar/maris
-	class_select_category = "Templar"
+	outfit = /datum/outfit/job/roguetown/primal_divines/hetaeroi
+	category_tags = list(CTAG_TEMPLAR, CTAG_KORYBANTES)
 
-/datum/advclass/templar/maris/post_equip(mob/living/carbon/human/H)
-	. = ..()
-	H.strip_church_keys()
-	H.give_abyssor_cult_key()
+/datum/advclass/voice
+	outfit = /datum/outfit/job/roguetown/primal_divines/seer
 
-/datum/advclass/voice/post_equip(mob/living/carbon/human/H)
-	. = ..()
-	H.strip_church_keys()
-	H.give_abyssor_cult_key()
+/datum/outfit/job/roguetown/primal_divines/hiereis/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.adjust_blindness(-3)
+	id = /obj/item/clothing/ring/gold
+	belt = /obj/item/storage/belt/rogue/leather/rope/upgraded
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
+	backl = /obj/item/storage/backpack/rogue/satchel
+	shirt = /obj/item/clothing/suit/roguetown/armor/vestments_padded
+	shoes = /obj/item/clothing/shoes/roguetown/sandals
+	pants = /obj/item/clothing/under/roguetown/trou/leather
+	neck = /obj/item/clothing/neck/roguetown/psicross/abyssor/g
+	armor = /obj/item/clothing/suit/roguetown/shirt/robe/abyssor_painter_sea
+	head = /obj/item/clothing/head/roguetown/roguehood/abyssor_painter
+	r_hand = /obj/item/rogueweapon/woodstaff/quarterstaff/steel/paint_heal
+	backpack_contents = list(
+		/obj/item/ritechalk = 1,
+		/obj/item/roguekey/abyssor_cult = 1,
+	)
+	H.cmode_music = 'sound/music/cmode/church/combat_acolyte.ogg'
+	if(H.mind)
+		SStreasury.grant_savings(ECONOMIC_LOWER_MIDDLE_CLASS, H)
+		H.mind.AddSpell(new /datum/action/cooldown/spell/projectile/divine_blast)
+	var/datum/devotion/C = new /datum/devotion(H, H.patron)
+	ADD_TRAIT(H, TRAIT_INK_AFFINITY, ROUNDSTART_TRAIT)
+	C.grant_miracles(H, cleric_tier = CLERIC_T4, passive_gain = CLERIC_REGEN_MAJOR, start_maxed = TRUE)
+	H.mind?.RemoveSpell(/datum/action/cooldown/spell/miracle/heal)
+
+/datum/outfit/job/roguetown/primal_divines/hetaeroi/pre_equip(mob/living/carbon/human/H)
+	..()
+	id = /obj/item/clothing/ring/silver/cleric
+	gloves = /obj/item/clothing/gloves/roguetown/bandages/weighted
+	backl = /obj/item/storage/backpack/rogue/satchel
+	mask = /obj/item/clothing/head/roguetown/roguehood/abyssor_painter
+	neck = /obj/item/clothing/neck/roguetown/psicross/abyssor
+	cloak = /obj/item/clothing/suit/roguetown/shirt/robe/abyssor_painter_sea
+	head = /obj/item/clothing/head/roguetown/headband/monk
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/cloth/monk
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/black
+	armor = /obj/item/clothing/suit/roguetown/shirt/robe/monk/holy
+	pants = /obj/item/clothing/under/roguetown/trou/leather
+	belt = /obj/item/storage/belt/rogue/leather/rope/upgraded
+	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
+	shoes = /obj/item/clothing/shoes/roguetown/footwraps/padded
+	backpack_contents = list(
+		/obj/item/ritechalk = 1,
+		/obj/item/roguekey/abyssor_cult = 1,
+		/obj/item/rogueweapon/huntingknife/paint = 1,
+	)
+	H.cmode_music = 'sound/music/combat_holy.ogg'
+	var/datum/devotion/C = new /datum/devotion(H, H.patron)
+	ADD_TRAIT(H, TRAIT_INK_AFFINITY, ROUNDSTART_TRAIT)
+	C.grant_miracles(H, cleric_tier = CLERIC_T2, passive_gain = CLERIC_REGEN_MINOR, devotion_limit = CLERIC_REQ_2)
+	H.mind?.RemoveSpell(/datum/action/cooldown/spell/miracle/heal)
+	if(H.mind)
+		SStreasury.give_money_account(ECONOMIC_LOWER_MIDDLE_CLASS, H, "Cult Funding.")
+	var/weapons = list("Discipline - Unarmed","Knuckledusters","Paintbrush")
+	var/weapon_choice = input(H,"Choose your weapon.", "TAKE UP ARMS") as anything in weapons
+	switch(weapon_choice)
+		if("Discipline - Unarmed")
+			H.put_in_hands(new /obj/item/clothing/gloves/roguetown/bandages/pugilist(H))
+		if("Knuckledusters")
+			H.put_in_hands(new /obj/item/clothing/gloves/roguetown/knuckles(H))
+		if("Paintbrush")
+			r_hand = /obj/item/rogueweapon/woodstaff/quarterstaff/steel/paint
+
+/datum/outfit/job/roguetown/primal_divines/seer/pre_equip(mob/living/carbon/human/H)
+	..()
+	id = /obj/item/clothing/ring/gold
+	gloves = /obj/item/clothing/gloves/roguetown/bandages/weighted
+	neck = /obj/item/clothing/neck/roguetown/psicross/abyssor/g
+	cloak = /obj/item/clothing/suit/roguetown/shirt/robe/abyssor_leader
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/abyssor_painter
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/cloth/monk
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/black
+	armor = /obj/item/clothing/suit/roguetown/shirt/robe/monk/holy
+	pants = /obj/item/clothing/under/roguetown/trou/leather
+	belt = /obj/item/storage/belt/rogue/leather/rope/upgraded
+	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
+	backl = /obj/item/storage/backpack/rogue/satchel
+	shoes = /obj/item/clothing/shoes/roguetown/footwraps/padded
+	backpack_contents = list(
+		/obj/item/ritechalk = 1,
+		/obj/item/roguekey/abyssor_cult = 1,
+	)
+	H.cmode_music = 'sound/music/combat_holy.ogg'
+	ADD_TRAIT(H, TRAIT_INK_AFFINITY, ROUNDSTART_TRAIT)
+	var/datum/devotion/C = new /datum/devotion(H, H.patron)
+	C.grant_miracles(H, cleric_tier = CLERIC_T4, passive_gain = CLERIC_REGEN_MINOR, devotion_limit = CLERIC_REQ_4)
+	H.mind?.RemoveSpell(/datum/action/cooldown/spell/miracle/heal)
+	if(H.mind)
+		SStreasury.give_money_account(ECONOMIC_LOWER_MIDDLE_CLASS, H, "Cult Funding.")
+	var/weapons = list("Discipline - Unarmed","Knuckledusters","Sylveric Trident")
+	var/weapon_choice = input(H,"Choose your weapon.", "TAKE UP ARMS") as anything in weapons
+	switch(weapon_choice)
+		if("Discipline - Unarmed")
+			r_hand = /obj/item/clothing/gloves/roguetown/bandages/pugilist
+		if("Knuckledusters")
+			r_hand = /obj/item/clothing/gloves/roguetown/knuckles
+		if("Sylveric Trident")
+			r_hand = /obj/item/rogueweapon/spear/trident/dreamscape_trident
+			backr = /obj/item/rogueweapon/scabbard/gwstrap
+			H.adjust_skillrank_up_to(/datum/skill/combat/polearms, SKILL_LEVEL_JOURNEYMAN, TRUE)
+			if(H.mind)
+				// Basically bind weapon for dream items. Works on the trident.
+				H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/dream_bind)
+	var/brushes = list("Offensive Brush", "Healing Brush")
+	var/brush_choice = input(H,"Choose your ritualistic brush.", "TAKE UP FAITH") as anything in brushes
+	switch(brush_choice)
+		if("Offensive Brush")
+			l_hand = /obj/item/rogueweapon/woodstaff/quarterstaff/steel/paint
+		if("Healing Brush")
+			l_hand = /obj/item/rogueweapon/woodstaff/quarterstaff/steel/paint_heal
 
 /datum/job/roguetown/painter
 	display_title = "Seer"

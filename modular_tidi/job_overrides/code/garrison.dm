@@ -27,9 +27,9 @@
 		qdel(worn)
 		H.equip_to_slot_or_del(new new_type(H), upgrade[2], TRUE)
 	// Steel mask. Worn if the face is free, otherwise carried.
-	var/obj/item/clothing/mask/rogue/facemask/steel/mask = new(H)
-	if(H.wear_mask || !H.equip_to_slot_if_possible(mask, SLOT_WEAR_MASK, TRUE))
-		H.equip_to_slot_or_del(mask, SLOT_IN_BACKPACK, TRUE)
+	var/obj/item/clothing/mask/rogue/facemask/steel/mask = new(get_turf(H))
+	if(H.wear_mask || !H.equip_to_slot_if_possible(mask, SLOT_WEAR_MASK, FALSE, TRUE, FALSE, TRUE, TRUE))
+		H.equip_to_slot_if_possible(mask, SLOT_IN_BACKPACK, FALSE, TRUE, FALSE, TRUE, TRUE)
 
 /datum/advclass/manorguard/footsman/post_equip(mob/living/carbon/human/H)
 	. = ..()

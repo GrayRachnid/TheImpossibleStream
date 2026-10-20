@@ -12,7 +12,7 @@
 	allowed_patrons = list(/datum/patron/old_god)
 	tutorial = "You are a Dungeoneer of the Inquisition, keeper of the cells beneath the manor."
 	selection_color = JCOLOR_INQUISITION
-	outfit = /datum/outfit/job/roguetown/dungeoneer
+	outfit = null
 	display_order = JDO_DUNGEONEER
 	min_pq = 0
 	max_pq = null

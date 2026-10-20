@@ -75,7 +75,7 @@ const getGodheadIcon = (patron: ConstantPatron) => {
     case 'Abyssor':
       return '\u16DA';
     case 'Dendor':
-      return '\u16C7';
+      return '\u234B';
     case 'Pestra':
       return '\u16D2';
     // [/SURREALIS-ADD]

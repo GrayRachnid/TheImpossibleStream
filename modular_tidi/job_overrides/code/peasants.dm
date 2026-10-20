@@ -61,14 +61,26 @@
 	category_tags = list(CTAG_SHOPHAND)
 	maximum_possible_slots = 2
 
+/datum/advclass/thug/goon/docker/post_equip(mob/living/carbon/human/H)
+	. = ..()
+	give_merchant_keyring(H)
+
 /datum/advclass/thug/wiseguy/docker
 	category_tags = list(CTAG_SHOPHAND)
 	maximum_possible_slots = 2
 	traits_applied = list(TRAIT_SEEPRICES, TRAIT_CICERONE, TRAIT_NUTCRACKER, TRAIT_ALCHEMY_EXPERT)
 
+/datum/advclass/thug/wiseguy/docker/post_equip(mob/living/carbon/human/H)
+	. = ..()
+	give_merchant_keyring(H)
+
 /datum/advclass/thug/bigman/docker
 	category_tags = list(CTAG_SHOPHAND)
 	maximum_possible_slots = 1
+
+/datum/advclass/thug/bigman/docker/post_equip(mob/living/carbon/human/H)
+	. = ..()
+	give_merchant_keyring(H)
 
 // The original Docker class is no longer selectable
 /datum/advclass/shophand

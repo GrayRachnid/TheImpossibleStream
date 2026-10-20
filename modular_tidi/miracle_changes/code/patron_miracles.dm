@@ -1,8 +1,8 @@
-// Lesser Healing, Water Healing and the T4 revival miracles are removed from these patrons. The Painter keeps Lesser Healing.
 /datum/patron/divine/abyssor/New()
 	..()
 	miracles -= /datum/action/cooldown/spell/miracle/heal
 	miracles -= /obj/effect/proc_holder/spell/invoked/abyssheal
+	paint_miracles -= /datum/action/cooldown/spell/miracle/heal
 
 /datum/patron/divine/dendor/New()
 	..()
