@@ -97,6 +97,9 @@
 
 /datum/job/roguetown/mercenary/after_spawn(mob/living/L, mob/M, latejoin = FALSE)
 	..()
+	// [SURREALIS-ADD] - MERCENARY_STATUE
+	return // Registration is automatic in post_equip. the remote-touch prompt below is no longer used
+	// [/SURREALIS-ADD]
 	if(L && ishuman(L))
 		var/mob/living/carbon/human/H = L
 		if(!H.mind)
@@ -116,6 +119,10 @@
 
 /datum/advclass/mercenary/post_equip(mob/living/carbon/human/H) // has to be here because this is done AFTER subclass selection
 	. = ..()
+	// [SURREALIS-ADD] - MERCENARY_STATUE
+	if(!statue_post_equip(H))
+		return
+	// [/SURREALIS-ADD]
 	var/list/subprefs = H.client?.prefs?.job_subprefs
 	if(!subprefs)
 		return
