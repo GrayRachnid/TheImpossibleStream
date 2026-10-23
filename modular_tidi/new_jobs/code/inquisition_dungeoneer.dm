@@ -10,7 +10,7 @@
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	forbidden_races = list(RACES_DESPISED)
 	allowed_patrons = list(/datum/patron/old_god)
-	tutorial = "You are a Dungeoneer of the Inquisition, keeper of the cells beneath the manor."
+	tutorial = "Unlike your brothers and sisters in faith, you are a professional. Neither an unwashed parolee nor a fanatic driven into frenzy, you were trained in secret prisons of Otava in combat, interrogation and investigation, an inquisitor-to-be. But you faltered. An unspeakable sin stains your past, yet they still have a use for you. You have been relegated to a shameful duty of torturing and maiming creations of PSYDON, a kind of a sin-eater. Your colleagues will meet God; you, however, will simply die."
 	selection_color = JCOLOR_INQUISITION
 	outfit = null
 	display_order = JDO_DUNGEONEER
@@ -28,7 +28,7 @@
 
 /datum/advclass/dungeoneer
 	name = "Penitent One"
-	tutorial = "You are a Dungeoneer of the Inquisition, keeper of the cells beneath the manor."
+	tutorial = "Unlike your brothers and sisters in faith, you are a professional. Neither an unwashed parolee nor a fanatic driven into frenzy, you were trained in secret prisons of Otava in combat, interrogation and investigation, an inquisitor-to-be. But you faltered. An unspeakable sin stains your past, yet they still have a use for you. You have been relegated to a shameful duty of torturing and maiming creations of PSYDON, a kind of a sin-eater. Your colleagues will meet God; you, however, will simply die."
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/dungeoneer
 	category_tags = list(CTAG_DUNGEONEER)
