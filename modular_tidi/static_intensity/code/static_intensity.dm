@@ -1,7 +1,7 @@
 /// Not votable and not in any vote pool; it is selected by default and the roundstart gamemode vote is disabled.
 /// Hard/soft antags are not blocked by flags, so the slots in static_intensity_config.dm decide what can appear.
 /datum/storyteller/gamemode/static_intensity
-	name = "SCARRED Intensity"
+	name = "SCARRED"
 	vote_desc = "The threads of fate are set. No wretches, no bandits."
 	desc = "Fixed roundstart intensity. No wretches or bandits. Major antagonists, gnolls, hag and dreamwalker are configured in static_intensity_config.dm."
 	welcome_text = "A heavy calm hangs over the Scar.."
