@@ -1,13 +1,13 @@
 // Placeholder name: "Dungeoneer".
 /datum/job/roguetown/dungeoneer
-	title = "Dungeoneer"
+	title = "Penitent One"
 	flag = DUNGEONEER
 	department_flag = INQUISITION
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_ages = list(AGE_ADULT)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	forbidden_races = list(RACES_DESPISED)
 	allowed_patrons = list(/datum/patron/old_god)
 	tutorial = "You are a Dungeoneer of the Inquisition, keeper of the cells beneath the manor."
@@ -19,45 +19,43 @@
 	round_contrib_points = 2
 	wanderer_examine = FALSE
 	advjob_examine = FALSE
-	give_bank_account = 15
+	give_bank_account = 40
 	vice_restrictions = list(/datum/charflaw/silverweakness)
-	job_traits = list(TRAIT_STEELHEARTED, TRAIT_INQUISITION, TRAIT_MEDIUMARMOR, TRAIT_SQUIRE_REPAIR)
+	job_traits = list(TRAIT_STEELHEARTED, TRAIT_INQUISITION, TRAIT_SQUIRE_REPAIR, TRAIT_INTELLECTUAL, TRAIT_BLACKBAGGER, TRAIT_PSYDONITE, TRAIT_DECEIVING_MEEKNESS)
 	advclass_cat_rolls = list(CTAG_DUNGEONEER = 2)
 	job_subclasses = list(/datum/advclass/dungeoneer)
 	has_subprefs = FALSE // only one subclass
 
 /datum/advclass/dungeoneer
-	name = "Dungeoneer"
+	name = "Penitent One"
 	tutorial = "You are a Dungeoneer of the Inquisition, keeper of the cells beneath the manor."
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/dungeoneer
 	category_tags = list(CTAG_DUNGEONEER)
 	subclass_languages = list(/datum/language/otavan)
 	cmode_music = 'sound/music/templarofpsydonia.ogg'
-	// Forced to medium armor in place of the Adjudicator's heavy armor trait.
-	traits_applied = list(TRAIT_MEDIUMARMOR)
 	// Weighs 7 the speed penalty discourages hunting.
 	subclass_stats = list(
 		STATKEY_STR = 3,
-		STATKEY_CON = 3,
+		STATKEY_PER = 3,
+		STATKEY_INT = 2,
 		STATKEY_WIL = 2,
-		STATKEY_SPD = -2,
+		STATKEY_SPD = -4
 	)
 	subclass_skills = list(
 		/datum/skill/combat/swords = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/maces = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/whipsflails = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/crossbows = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/combat/bows = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/wrestling = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/shields = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/climbing = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/swimming = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/reading = SKILL_LEVEL_NOVICE,
-		/datum/skill/misc/medicine = SKILL_LEVEL_NOVICE,
+		/datum/skill/misc/athletics = SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/swimming = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/reading = SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/medicine = SKILL_LEVEL_EXPERT,
+		/datum/skill/craft/cooking = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/craft/crafting = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/magic/holy = SKILL_LEVEL_APPRENTICE,
 	)
 	subclass_stashed_items = list(
@@ -65,28 +63,35 @@
 	)
 
 /datum/outfit/job/roguetown/dungeoneer
-	parent_type = /datum/outfit/job/roguetown/psydoniantemplar
+	job_bitflag = BITFLAG_HOLY_WARRIOR
 
-/datum/outfit/job/roguetown/dungeoneer/choose_loadout(mob/living/carbon/human/H)
-	var/helmets = list("Barbute", "Sallet", "Armet", "Bucket Helm", "Greatplumed Armet", "Volfskulle Bascinet")
-	var/helmet_choice = input(H,"Choose your HELMET.", "TAKE UP PSYDON'S HELMS.") as anything in helmets
-	switch(helmet_choice)
-		if("Barbute")
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/psydonbarbute, SLOT_HEAD, TRUE)
-		if("Sallet")
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/psysallet, SLOT_HEAD, TRUE)
-		if("Armet")
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/psydonhelm, SLOT_HEAD, TRUE)
-		if("Bucket Helm")
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/psybucket, SLOT_HEAD, TRUE)
-		if("Greatplumed Armet")
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/knight/psy/greatplume, SLOT_HEAD, TRUE)
-		if("Volfskulle Bascinet")
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/volfplate/psydonic, SLOT_HEAD, TRUE)
+/datum/outfit/job/roguetown/dungeoneer/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.adjust_blindness(-3)
+	head 	= 	/obj/item/clothing/head/roguetown/helmet/otavan
+	backl 	= 	/obj/item/storage/backpack/rogue/satchel/otavan
+	neck 	= 	/obj/item/clothing/neck/roguetown/gorget
+	armor 	= 	/obj/item/clothing/suit/roguetown/armor/leather/studded/cuirbouilli
+	wrists 	= 	/obj/item/clothing/neck/roguetown/psicross/silver
+	id 		= 	/obj/item/clothing/ring/signet/psy
+	shirt 	= 	/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/otavan/inq
+	gloves 	= 	/obj/item/clothing/gloves/roguetown/otavan/psygloves
+	belt 	= 	/obj/item/storage/belt/rogue/leather/knifebelt/black/psydon_blessed
+	beltl 	= 	/obj/item/storage/belt/rogue/surgery_bag/full
+	beltr 	= 	/obj/item/rogueweapon/scabbard/sword/noble
+	pants 	= 	/obj/item/clothing/under/roguetown/heavy_leather_pants/otavan
+	shoes 	= 	/obj/item/clothing/shoes/roguetown/boots/otavan
+	backpack_contents = list(
+		/obj/item/roguekey/inquisitionmanor = 1,
+		/obj/item/paper/inqslip/arrival/ortho = 1,
+		/obj/item/rogueweapon/huntingknife/idagger/silver/psydagger = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/clothing/head/inqarticles/blackbag = 1,
+		/obj/item/clothing/mask/rogue/sack/psy = 1,
+		/obj/item/rope/inqarticles/inquirycord = 2,
+	)
+	H.put_in_hands(new /obj/item/rogueweapon/sword/rapier/psy/preblessed)
 
-	H.equip_to_slot_or_del(new /obj/item/clothing/suit/roguetown/armor/plate/cuirass/fluted/ornate, SLOT_ARMOR, TRUE)
-	H.equip_to_slot_or_del(new /obj/item/clothing/suit/roguetown/armor/leather/studded/cuirbouilli, SLOT_SHIRT, TRUE)
-	H.equip_to_slot_or_del(new /obj/item/clothing/wrists/roguetown/bracers, SLOT_WRISTS, TRUE)
-
-	H.put_in_hands(new /obj/item/rogueweapon/sword/short/silver(H))
-	H.equip_to_slot_or_del(new /obj/item/rogueweapon/scabbard/sword/noble, SLOT_BELT_L, TRUE)
+	add_verb(H, /mob/living/carbon/human/proc/faith_test)
+	add_verb(H, /mob/living/carbon/human/proc/torture_victim)
+	change_origin(H, /datum/virtue/origin/otava, "Holy order")

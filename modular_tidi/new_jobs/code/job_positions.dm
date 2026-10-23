@@ -4,4 +4,4 @@
 	GLOB.garrison_positions -= "Warden"
 	GLOB.wanderer_positions -= "Lamplighter"
 	GLOB.atc_positions += "Merchant Mercenary"
-	GLOB.inquisition_positions += "Dungeoneer"
+	GLOB.inquisition_positions += "Penitent One"

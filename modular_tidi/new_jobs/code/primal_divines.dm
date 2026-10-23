@@ -102,6 +102,7 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	saiga_shoes = /obj/item/clothing/shoes/roguetown/horseshoes
+	id = /obj/item/clothing/neck/roguetown/psicross/dendor
 	job_bitflag = NONE
 
 /datum/advclass/wilds_warden
@@ -154,7 +155,6 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 		/obj/item/signal_horn = 1,
 		/obj/item/hunting_map/boars = 1,
 	)
-	add_verb(H, /mob/proc/haltyell)
 	H.set_blindness(0)
 
 	if(H.mind)
