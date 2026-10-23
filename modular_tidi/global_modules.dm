@@ -4,6 +4,7 @@
 #include "commandbar\_commandbar.dme"
 #include "drow_mercs\_drow_mercs.dme"
 #include "excidium\_excidium.dme"
+#include "heretics\_heretics.dme"
 #include "iconoclast_tweak\_iconoclast_tweak.dme"
 #include "job_overrides\_job_overrides.dme"
 #include "job_weapon_overrides\_job_weapon_overrides.dme"
