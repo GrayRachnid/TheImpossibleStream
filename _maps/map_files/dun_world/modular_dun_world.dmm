@@ -36424,8 +36424,8 @@
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors/shelter/woods)
 "gnK" = (
-/obj/structure/flora/ausbushes/ywflowers,
-/turf/open/floor/rogue/grasscold,
+/obj/effect/landmark/deaths_door/exit,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "gnL" = (
 /obj/structure/stairs/stone{
@@ -45316,6 +45316,12 @@
 	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/town)
+"hQX" = (
+/obj/structure/vine{
+	opacity = 1
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/rtfield)
 "hRb" = (
 /obj/structure/bed/rogue/inn/double{
 	dir = 1
@@ -50900,6 +50906,13 @@
 "iOe" = (
 /turf/open/water/swamp,
 /area/rogue/under/cavewet/bogcaves/west)
+"iOg" = (
+/obj/structure/vine{
+	opacity = 1
+	},
+/obj/structure/glowshroom,
+/turf/open/water/river/flow/east,
+/area/rogue/outdoors/rtfield)
 "iOo" = (
 /obj/structure/mineral_door/wood/fancywood{
 	locked = 1;
@@ -56107,6 +56120,7 @@
 /obj/structure/vine{
 	opacity = 1
 	},
+/obj/structure/glowshroom,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/rtfield)
 "jIb" = (
@@ -67808,6 +67822,7 @@
 /obj/structure/vine{
 	opacity = 1
 	},
+/obj/structure/glowshroom,
 /turf/open/water/river/flow,
 /area/rogue/outdoors/rtfield)
 "lFb" = (
@@ -121198,6 +121213,13 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+"uNt" = (
+/obj/structure/vine{
+	opacity = 1
+	},
+/obj/structure/glowshroom,
+/turf/open/water/river/flow,
+/area/rogue/outdoors/rtfield)
 "uNu" = (
 /obj/structure/fluff/railing/border/west{
 	dir = 9
@@ -130717,6 +130739,10 @@
 /obj/structure/chair/bench/church/smallbench,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/mountains)
+"wuE" = (
+/obj/structure/glowshroom,
+/turf/open/water/river/flow/east,
+/area/rogue/outdoors/rtfield)
 "wuI" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/rogue/grassyel,
@@ -130732,6 +130758,13 @@
 /obj/structure/fluff/railing/border/west,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/magician)
+"wuV" = (
+/obj/structure/vine{
+	opacity = 1
+	},
+/obj/structure/glowshroom,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/rtfield)
 "wuX" = (
 /obj/effect/decal/edge_corner{
 	color = "#3f3f3f"
@@ -138991,6 +139024,10 @@
 /obj/structure/plasticflaps,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/sewer)
+"xSL" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/rogue/grasscold,
+/area/rogue/outdoors/town)
 "xSN" = (
 /obj/structure/fluff/railing/corner,
 /turf/open/floor/rogue/cobblerock{
@@ -140441,6 +140478,10 @@
 /obj/structure/fluff/railing/border/north,
 /turf/open/floor/rogue/tile/harem,
 /area/rogue/indoors/town/steward)
+"yev" = (
+/obj/structure/glowshroom,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/rtfield)
 "yew" = (
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/mountains/decap/gunduzirak)
@@ -261065,7 +261106,7 @@ jkJ
 pxF
 cmH
 pxF
-pxF
+bsL
 pSg
 pSg
 pSg
@@ -261517,7 +261558,7 @@ pxF
 pxF
 emv
 emv
-pxF
+bsL
 pSg
 pSg
 dMX
@@ -261967,10 +262008,10 @@ hPs
 bsL
 bsL
 emv
-pxF
+swe
 emv
-pxF
 bsL
+hQX
 pSg
 dMX
 dMX
@@ -261979,7 +262020,7 @@ dMX
 bsL
 bsL
 dMX
-bsL
+hQX
 dMX
 bsL
 cFz
@@ -262421,19 +262462,19 @@ bsL
 pxF
 pxF
 emv
-pxF
 bsL
 bsL
+hQX
 bsL
 dMX
 dMX
 dMX
 rrP
 dMX
-dMX
+vkX
 bsL
 bsL
-bsL
+hQX
 cFz
 cFz
 bhJ
@@ -262874,10 +262915,10 @@ yli
 pxF
 pxF
 emv
-pxF
 bsL
-bsL
-bsL
+hQX
+qBQ
+hQX
 bsL
 bsL
 bsL
@@ -263299,11 +263340,11 @@ kWm
 udk
 cDX
 cDX
-daQ
+vKJ
 pWT
 rII
 hJB
-pWT
+qjF
 teB
 teB
 teB
@@ -263327,7 +263368,7 @@ pxF
 emv
 emv
 emv
-pxF
+hQX
 kNC
 kNC
 kNC
@@ -263779,7 +263820,7 @@ pxF
 pxF
 emv
 yli
-pxF
+bsL
 kNC
 tvp
 bsL
@@ -264231,7 +264272,7 @@ pxF
 pxF
 pxF
 pxF
-pxF
+swe
 kNC
 kNC
 kNC
@@ -264684,11 +264725,11 @@ fVo
 pqH
 hPs
 fVo
+hQX
 bsL
 bsL
 bsL
-bsL
-bsL
+hQX
 dMX
 bsL
 dMX
@@ -265108,7 +265149,7 @@ tZf
 iTB
 phl
 daQ
-pWT
+qjF
 pWT
 daQ
 wob
@@ -265585,11 +265626,11 @@ opA
 rUd
 hdS
 hdS
-icq
+wuV
 fVo
 fVo
 bsL
-bsL
+qBQ
 dMX
 bsL
 gcx
@@ -266039,7 +266080,7 @@ hdS
 hdS
 icq
 fVo
-fVo
+yev
 fVo
 bsL
 bsL
@@ -266918,7 +266959,7 @@ teB
 pWT
 njB
 daQ
-pWT
+njB
 wob
 wDo
 lXw
@@ -267822,7 +267863,7 @@ pWT
 wob
 hJB
 daQ
-daQ
+vKJ
 daQ
 wmR
 uFN
@@ -267853,7 +267894,7 @@ fVo
 fVo
 hdS
 hPs
-hPs
+wuE
 fVo
 bsL
 ruJ
@@ -268293,7 +268334,7 @@ qKs
 qKs
 uJY
 daQ
-gnK
+wzC
 pWT
 njB
 wMb
@@ -268747,7 +268788,7 @@ teB
 daQ
 wzC
 wMb
-pWT
+qjF
 njB
 cyH
 jhP
@@ -269170,14 +269211,14 @@ pWT
 jhP
 pWT
 njB
-daQ
+vKJ
 pWT
 wMb
 njB
 pWT
 njB
 pWT
-fpx
+rcz
 fpx
 gVI
 jxj
@@ -269195,8 +269236,8 @@ exD
 exD
 exD
 wFK
-fpx
-fpx
+exD
+exD
 fpx
 fpx
 wzC
@@ -269617,7 +269658,7 @@ wob
 daQ
 exD
 exD
-pWT
+qjF
 wMb
 wob
 wMb
@@ -269647,9 +269688,9 @@ exD
 exD
 exD
 ebR
-fpx
-fpx
-fpx
+exD
+exD
+exD
 fpx
 wzC
 rmg
@@ -270093,18 +270134,18 @@ iHI
 xGg
 vuE
 tVl
-exD
+gnK
 exD
 exD
 exD
 exD
 edf
+exD
+exD
+exD
+exD
 fpx
-fpx
-fpx
-fpx
-fpx
-wzC
+xSL
 rmg
 hvv
 hvv
@@ -270507,12 +270548,12 @@ pWT
 fpx
 pWT
 qjF
-pWT
+jhP
 daQ
 daQ
 daQ
 daQ
-pWT
+jhP
 pWT
 daQ
 qjF
@@ -270524,7 +270565,7 @@ exD
 daQ
 daQ
 pWT
-pWT
+qjF
 daQ
 daQ
 pWT
@@ -270552,9 +270593,9 @@ fpx
 pMG
 qKs
 daQ
-fpx
-fpx
-fpx
+exD
+exD
+exD
 fpx
 fpx
 pWT
@@ -270567,7 +270608,7 @@ pWT
 fVo
 fVo
 fVo
-pqH
+iOg
 pqH
 fVo
 gcx
@@ -271004,10 +271045,10 @@ oiV
 qKs
 qKs
 wob
-daQ
-pWT
 fpx
 fpx
+fpx
+exD
 fpx
 rII
 njB
@@ -271409,7 +271450,7 @@ fpx
 fpx
 fpx
 fpx
-pWT
+jhP
 pWT
 pWT
 fpx
@@ -271458,7 +271499,7 @@ wFK
 pWT
 wMb
 njB
-pWT
+fpx
 fpx
 fpx
 pWT
@@ -271889,7 +271930,7 @@ exD
 fpx
 fpx
 fpx
-fpx
+rcz
 pWT
 pWT
 kvt
@@ -271908,7 +271949,7 @@ ovH
 lfr
 kvt
 pWT
-daQ
+vKJ
 wob
 daQ
 fpx
@@ -271918,7 +271959,7 @@ pWT
 rmg
 jhP
 pWT
-wzC
+xSL
 rmg
 rmg
 pWT
@@ -272338,7 +272379,7 @@ pWT
 pWT
 pWp
 pWT
-pWT
+njB
 pWT
 pWT
 pWT
@@ -272782,7 +272823,7 @@ exD
 pWT
 pWT
 pWT
-pWT
+jhP
 daQ
 jhP
 pWT
@@ -273266,8 +273307,8 @@ kvt
 teB
 pWT
 njB
-pWT
 pWp
+fpx
 fpx
 fpx
 fpx
@@ -273671,7 +273712,7 @@ xzx
 fpx
 exD
 pWT
-pWT
+jhP
 bDe
 njB
 pWT
@@ -274182,7 +274223,7 @@ fpx
 fpx
 fpx
 pWT
-pWT
+qjF
 wMb
 rmg
 njB
@@ -275095,7 +275136,7 @@ pWT
 fVo
 hdS
 lEX
-cva
+uNt
 hdS
 hdS
 fVo
@@ -275552,7 +275593,7 @@ hdS
 cva
 cva
 hdS
-fVo
+yev
 fVo
 fVo
 fVo
@@ -275996,7 +276037,7 @@ fpx
 fpx
 pWT
 pWT
-pWT
+qjF
 pWT
 fVo
 fVo
@@ -276435,7 +276476,7 @@ qyR
 qyR
 qyR
 qyR
-pWT
+qjF
 qyR
 wMb
 njB
@@ -278267,7 +278308,7 @@ pWT
 njB
 fVo
 fVo
-hPs
+wuE
 fVo
 bhJ
 bhJ
