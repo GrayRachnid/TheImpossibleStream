@@ -236,7 +236,7 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 
 /datum/advclass/herald
 	outfit = /datum/outfit/job/roguetown/primal_divines/hiereis
-	category_tags = list(CTAG_ACOLYTE, CTAG_KORYBANTES)
+	category_tags = list(CTAG_KORYBANTES)
 
 /datum/advclass/herald/post_equip(mob/living/carbon/human/H)
 	. = ..()
@@ -249,7 +249,7 @@ GLOBAL_LIST_INIT(primal_divines_positions, list(
 
 /datum/advclass/templar/maris
 	outfit = /datum/outfit/job/roguetown/primal_divines/hetaeroi
-	category_tags = list(CTAG_TEMPLAR, CTAG_KORYBANTES)
+	category_tags = list(CTAG_KORYBANTES)
 
 /datum/advclass/voice
 	outfit = /datum/outfit/job/roguetown/primal_divines/seer

@@ -8,3 +8,11 @@
 		C.grant_miracles(H, cleric_tier = CLERIC_T4, start_maxed = TRUE)
 		LAZYSET(backpack_contents, /obj/item/ritechalk, 1)
 		wrists = /obj/item/clothing/neck/roguetown/psicross/malum
+
+//Makes keepers part of the clinic instead of church.
+/obj/item/storage/keyring/keeper
+	keys = list(
+		/obj/item/roguekey/keeper,
+		/obj/item/roguekey/keeper_inner,
+		/obj/item/roguekey/physician,
+	)
