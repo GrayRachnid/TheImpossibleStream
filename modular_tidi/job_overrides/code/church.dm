@@ -8,7 +8,7 @@
 		/datum/advclass/templar/guardian,
 	)
 
-/datum/job/roguetown/acolyte
+/datum/job/roguetown/monk
 	job_subclasses = list(/datum/advclass/acolyte)
 
 
