@@ -77,7 +77,7 @@
 "aap" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 0;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /obj/structure/fermentation_keg/beer,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -2742,7 +2742,7 @@
 "azE" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = -14;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/rogue/grasscold,
@@ -16260,7 +16260,7 @@
 "cRG" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 8;
-	color = 5FC381;
+	color = "#5FC381";
 	pixel_y = 24
 	},
 /turf/open/floor/rogue/grasscold,
@@ -28046,7 +28046,7 @@
 "eST" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 0;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/rogue/grasscold,
@@ -30507,7 +30507,7 @@
 "fnj" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 0;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /turf/open/floor/rogue/grasscold,
 /area/rogue/druidsgrove)
@@ -31442,7 +31442,7 @@
 "fvk" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 0;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/druidsgrove)
@@ -36191,7 +36191,7 @@
 "gkQ" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = -4;
-	color = 5FC381;
+	color = "#5FC381";
 	pixel_y = 14
 	},
 /turf/open/floor/rogue/grasscold,
@@ -50153,7 +50153,7 @@
 "iGE" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 0;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/grass,
@@ -60942,7 +60942,7 @@
 /obj/structure/flora/roguegrass,
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 0;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/druidsgrove)
@@ -67057,7 +67057,7 @@
 /obj/structure/flora/roguegrass,
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 0;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/grass,
@@ -70234,7 +70234,7 @@
 "lXR" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 0;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /turf/open/water/river/flow/east,
 /area/rogue/druidsgrove)
@@ -87291,7 +87291,7 @@
 "oVJ" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 13;
-	color = 5FC381;
+	color = "#5FC381";
 	pixel_y = 24
 	},
 /turf/open/floor/rogue/grasscold,
@@ -96170,7 +96170,7 @@
 /obj/structure/flora/roguegrass,
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 0;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/druidsgrove)
@@ -101387,7 +101387,7 @@
 "rqZ" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 0;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/druidsgrove)
@@ -104053,7 +104053,7 @@
 "rOq" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = -14;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /turf/open/floor/rogue/grasscold,
 /area/rogue/druidsgrove)
@@ -125396,7 +125396,7 @@
 "vuf" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 0;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/rogue/grasscold,
@@ -130300,7 +130300,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 0;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/druidsgrove)
@@ -132543,7 +132543,7 @@
 /obj/structure/fluff/railing/border/north,
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 0;
-	color = 5FC381
+	color = "#5FC381"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/druidsgrove)
@@ -136847,7 +136847,7 @@
 "xuL" = (
 /obj/effect/wisp/prestidigitation/willowwisp{
 	pixel_x = 4;
-	color = 5FC381;
+	color = "#5FC381";
 	pixel_y = 5
 	},
 /turf/open/floor/rogue/grasscold,
