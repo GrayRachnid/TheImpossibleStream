@@ -47450,6 +47450,13 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/under/cave/scarymaze)
+"hXY" = (
+/obj/structure/bed/rogue/inn{
+	dir = 4
+	},
+/obj/item/bedsheet/rogue/wool,
+/turf/open/floor/rogue/woodturned/nosmooth,
+/area/rogue)
 "hXZ" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/naturalstone,
@@ -75995,8 +76002,7 @@
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/under/cave/scarymaze)
 "mUQ" = (
-,
-/turf/closed/basic,
+/turf/open/floor/rogue/churchrough,
 /area/rogue)
 "mUR" = (
 /obj/machinery/light/rogue/lanternpost,
@@ -78715,6 +78721,15 @@
 "nsv" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/beach/central)
+"nsC" = (
+/obj/structure/chair/wood/rogue/fancy{
+	dir = 4;
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/effect/landmark/start/shophand,
+/turf/open/floor/carpet/royalblack,
+/area/rogue)
 "nsH" = (
 /obj/structure/table/wood/poor,
 /obj/item/millstone,
@@ -412948,7 +412963,7 @@ jsW
 oSb
 yds
 maM
-mUQ
+nsC
 yds
 xbC
 nmq
@@ -418366,7 +418381,7 @@ gri
 iUR
 nmq
 dca
-mUQ
+hXY
 qog
 vNN
 ehL
