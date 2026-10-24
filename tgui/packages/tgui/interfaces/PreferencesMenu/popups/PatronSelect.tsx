@@ -73,11 +73,17 @@ const getGodheadIcon = (patron: ConstantPatron) => {
       return '\u16E3';
     // [SURREALIS-ADD] - LORE
     case 'Abyssor':
-      return '\u16DA';
+      return '\u058D';
     case 'Dendor':
-      return '\u234B';
+      return '\u2748';
     case 'Pestra':
-      return '\u16D2';
+      return '\u2695';
+    case 'Malum':
+      return '\u168D';
+    case 'Noc':
+      return '\u{1F701}';
+    case 'Eora':
+      return '\u2766';
     // [/SURREALIS-ADD]
     default:
       return '?';
@@ -86,7 +92,15 @@ const getGodheadIcon = (patron: ConstantPatron) => {
 
 // [SURREALIS-ADD] - LORE
 // Factions without a head patron still mark their representative patrons with an icon.
-const FACTION_ICON_PATRONS = ['Abyssor', 'Dendor', 'Pestra', 'Zizo'];
+const FACTION_ICON_PATRONS = [
+  'Abyssor',
+  'Dendor',
+  'Eora',
+  'Malum',
+  'Noc',
+  'Pestra',
+  'Zizo',
+];
 const hasFactionIcon = (faith: ConstantFaith, patron: EnhancedPatron) =>
   faith.godhead === patron.type || FACTION_ICON_PATRONS.includes(patron.name);
 // [/SURREALIS-ADD]

@@ -36234,6 +36234,12 @@
 /obj/structure/stairs,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
+"gkm" = (
+/obj/effect/spawner/lootdrop/roguetown/dungeon/misc,
+/obj/structure/closet/dirthole/closed,
+/obj/structure/gravemarker,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/rtfield)
 "gkn" = (
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/blocks,
@@ -46596,6 +46602,13 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor)
+"hZN" = (
+/obj/structure/closet/dirthole/closed/loot,
+/obj/item/natural/bone,
+/obj/item/natural/bone,
+/obj/structure/gravemarker,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/rtfield)
 "hZP" = (
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage,
 /turf/open/floor/rogue/dirt,
@@ -46841,6 +46854,7 @@
 "ibK" = (
 /obj/structure/closet/dirthole/closed/loot,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/misc,
+/obj/structure/gravemarker,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "ibL" = (
@@ -60490,6 +60504,13 @@
 /obj/structure/bed/rogue/shit,
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/under/town/sewer)
+"kta" = (
+/obj/item/natural/bone,
+/obj/item/natural/bone,
+/obj/structure/closet/dirthole/closed,
+/obj/structure/gravemarker,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/rtfield)
 "kti" = (
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/dirt/road,
@@ -91705,8 +91726,9 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/magician)
 "pFD" = (
-/obj/structure/closet/dirthole/closed/loot,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/tools,
+/obj/structure/closet/dirthole/closed,
+/obj/structure/gravemarker,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "pFF" = (
@@ -532433,7 +532455,7 @@ quW
 pqZ
 hbf
 aad
-kMQ
+kta
 hgj
 asY
 asY
@@ -538310,7 +538332,7 @@ bsL
 pqZ
 kMQ
 bRl
-kMQ
+gkm
 llO
 nwW
 nwW
@@ -540569,7 +540591,7 @@ jMU
 quW
 pqZ
 aad
-kMQ
+hZN
 hgj
 rZO
 llO
