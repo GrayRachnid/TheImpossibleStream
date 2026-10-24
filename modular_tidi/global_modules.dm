@@ -4,6 +4,7 @@
 #include "commandbar\_commandbar.dme"
 #include "drow_mercs\_drow_mercs.dme"
 #include "excidium\_excidium.dme"
+#include "heretics\_heretics.dme"
 #include "iconoclast_tweak\_iconoclast_tweak.dme"
 #include "job_weapon_overrides\_job_weapon_overrides.dme"
 #include "loadout\_loadout.dme"
@@ -18,3 +19,4 @@
 #include "sound_changes\_sound_changes.dme"
 #include "species_changes\_species_changes.dme"
 #include "species_renames\_species_renames.dme"
+#include "weapons_modular\_weapons_modular.dme"
