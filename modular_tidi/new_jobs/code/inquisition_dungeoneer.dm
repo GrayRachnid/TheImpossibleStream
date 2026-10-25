@@ -1,5 +1,4 @@
-// Placeholder name: "Dungeoneer".
-/datum/job/roguetown/dungeoneer
+/datum/job/roguetown/inquis_dungeoneer
 	title = "Penitent One"
 	flag = DUNGEONEER
 	department_flag = INQUISITION
@@ -23,14 +22,14 @@
 	vice_restrictions = list(/datum/charflaw/silverweakness)
 	job_traits = list(TRAIT_STEELHEARTED, TRAIT_INQUISITION, TRAIT_SQUIRE_REPAIR, TRAIT_INTELLECTUAL, TRAIT_BLACKBAGGER, TRAIT_PSYDONITE, TRAIT_DECEIVING_MEEKNESS)
 	advclass_cat_rolls = list(CTAG_DUNGEONEER = 2)
-	job_subclasses = list(/datum/advclass/dungeoneer)
+	job_subclasses = list(/datum/advclass/inquis_dungeoneer)
 	has_subprefs = FALSE // only one subclass
 
-/datum/advclass/dungeoneer
+/datum/advclass/inquis_dungeoneer
 	name = "Penitent One"
 	tutorial = "Unlike your brothers and sisters in faith, you are a professional. Neither an unwashed parolee nor a fanatic driven into frenzy, you were trained in secret prisons of Otava in combat, interrogation and investigation, an inquisitor-to-be. But you faltered. An unspeakable sin stains your past, yet they still have a use for you. You have been relegated to a shameful duty of torturing and maiming creations of PSYDON, a kind of a sin-eater. Your colleagues will meet God; you, however, will simply die."
 	allowed_sexes = list(MALE, FEMALE)
-	outfit = /datum/outfit/job/roguetown/dungeoneer
+	outfit = /datum/outfit/job/roguetown/inquis_dungeoneer
 	category_tags = list(CTAG_DUNGEONEER)
 	subclass_languages = list(/datum/language/otavan)
 	cmode_music = 'sound/music/templarofpsydonia.ogg'
@@ -62,10 +61,11 @@
 		"The Book" = /obj/item/book/rogue/bibble/psy
 	)
 
-/datum/outfit/job/roguetown/dungeoneer
+/datum/outfit/job/roguetown/inquis_dungeoneer
 	job_bitflag = BITFLAG_HOLY_WARRIOR
+	has_loadout = TRUE
 
-/datum/outfit/job/roguetown/dungeoneer/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/inquis_dungeoneer/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.adjust_blindness(-3)
 	head 	= 	/obj/item/clothing/head/roguetown/helmet/otavan
@@ -78,7 +78,6 @@
 	gloves 	= 	/obj/item/clothing/gloves/roguetown/otavan/psygloves
 	belt 	= 	/obj/item/storage/belt/rogue/leather/knifebelt/black/psydon_blessed
 	beltl 	= 	/obj/item/storage/belt/rogue/surgery_bag/full
-	beltr 	= 	/obj/item/rogueweapon/scabbard/sword/noble
 	pants 	= 	/obj/item/clothing/under/roguetown/heavy_leather_pants/otavan
 	shoes 	= 	/obj/item/clothing/shoes/roguetown/boots/otavan
 	backpack_contents = list(
@@ -90,8 +89,20 @@
 		/obj/item/clothing/mask/rogue/sack/psy = 1,
 		/obj/item/rope/inqarticles/inquirycord = 2,
 	)
-	H.put_in_hands(new /obj/item/rogueweapon/sword/rapier/psy/preblessed)
+
 
 	add_verb(H, /mob/living/carbon/human/proc/faith_test)
 	add_verb(H, /mob/living/carbon/human/proc/torture_victim)
 	change_origin(H, /datum/virtue/origin/otava, "Holy order")
+
+
+/datum/outfit/job/roguetown/inquis_dungeoneer/choose_loadout(mob/living/carbon/human/H)
+	.=..()
+	var/weapons = list("REPENTANCE (Psydonic Longsword)", "REFUTATION (Psydonic Executioner's Sword)")
+	var/weapon_choice = input(H,"Choose your WEAPON.", "TAKE UP PSYDON'S ARMS.") as anything in weapons
+	switch(weapon_choice)
+		if("REPENTANCE (Psydonic Longsword)")
+			H.equip_to_appropriate_slot_or_hands(new /obj/item/rogueweapon/sword/long/psysword/preblessed(H))
+			H.equip_to_slot_or_del(new /obj/item/rogueweapon/scabbard/sword/noble, SLOT_BELT_R, TRUE)
+		if("REFUTATION (Psydonic Executioner's Sword)")
+			H.equip_to_appropriate_slot_or_hands(new /obj/item/rogueweapon/sword/long/exe/psy/preblessed(H))
