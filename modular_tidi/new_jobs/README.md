@@ -4,6 +4,8 @@
 
 **Created In:** https://github.com/Shadow-Fragger-Metaclique-Gang/TheImpossibleDream/pull/71
 
+**Related PRs:** https://github.com/Shadow-Fragger-Metaclique-Gang/TheImpossibleDream/pull/84
+
 **Major changes:**
 
 Roles that do not exist in the core job definitions.
