@@ -15,9 +15,9 @@
 		"Werewolf" = 1,
 		"Masquerade" = 1,
 		"Rebel" = 1,
-		"Bandit" = 0,
+		"Bandit" = 3,
 		// Soft antagonists
-		"Wretch" = 0,
+		"Wretch" = 3,
 		"Gnoll" = 2,
 		"Hag" = 1,
 		"Assassin" = 0,
