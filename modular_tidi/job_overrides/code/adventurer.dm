@@ -67,7 +67,7 @@
 /datum/advclass/sfighter/duelist
 	maximum_possible_slots = 2
 
-/datum/advclass/sfighter/ironclad
+/datum/advclass/sfighter
 	maximum_possible_slots = 2
 
 /datum/advclass/sfighter/mhunter
