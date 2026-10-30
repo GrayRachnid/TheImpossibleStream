@@ -21,7 +21,7 @@
 	triumph_only = FALSE
 	min_round_time = 30 MINUTES
 	max_spawns = 2
-	weight = 16
+	weight = 200
 	triumph_threshold = 200
 	spawn_landmark = "Wretch"
 	required_roles = list(
