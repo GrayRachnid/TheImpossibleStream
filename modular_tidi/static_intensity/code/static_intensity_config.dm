@@ -96,6 +96,18 @@
 	// track = EVENT_TRACK_CHARACTER_INJECTION
 	// shared_occurence_type = null
 
+/datum/migrant_wave/bandit
+	track = MIGRANT_TRACK_SPECIAL
+	min_round_time = 30 MINUTES
+	is_raid = TRUE
+	can_roll = TRUE
+	required_roles = list(
+		/datum/migrant_role/bandit = 1,
+	)
+	optional_roles = list(
+		/datum/migrant_role/bandit = 4,
+	)
+
 /datum/antagonist/gnoll
 	storyteller_slot_default_cap = 6
 
