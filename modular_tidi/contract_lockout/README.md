@@ -2,7 +2,7 @@
 
 **Tag:** `CONTRACT_LOCKOUT`
 
-**Created in:** PR link pending
+**Created in:** https://github.com/Shadow-Fragger-Metaclique-Gang/TheImpossibleDream/pull/102
 
 **Major changes:**
 

@@ -4,6 +4,8 @@
 
 **Created In:** https://github.com/Shadow-Fragger-Metaclique-Gang/TheImpossibleDream/pull/71
 
+**Related PRs:** https://github.com/Shadow-Fragger-Metaclique-Gang/TheImpossibleDream/pull/102
+
 **Major changes:**
 
 Files are split by job category.

@@ -4,74 +4,6 @@
 /proc/get_adventurer_slot_cap()
 	return JOB_OVERRIDES_ADVENTURER_SLOTS
 
-/datum/advclass/foreigner
-	maximum_possible_slots = 2
-
-/datum/advclass/foreigner/bronzeclad
-	maximum_possible_slots = 2
-
-/datum/advclass/foreigner/drow
-	maximum_possible_slots = 2
-
-/datum/advclass/foreigner/fencerguy
-	maximum_possible_slots = 2
-
-/datum/advclass/foreigner/lesserblackoak
-	maximum_possible_slots = 2
-
-/datum/advclass/foreigner/refugee
-	maximum_possible_slots = 2
-
-/datum/advclass/foreigner/repentant
-	maximum_possible_slots = 2
-
-/datum/advclass/foreigner/slaver
-	maximum_possible_slots = 2
-
-/datum/advclass/foreigner/yoruku
-	maximum_possible_slots = 2
-
-/datum/advclass/mage/alchemist
-	maximum_possible_slots = 2
-
-/datum/advclass/mage/spellblade
-	maximum_possible_slots = 2
-
-/datum/advclass/mage/spellfist
-	maximum_possible_slots = 2
-
-/datum/advclass/mage/spellsinger
-	maximum_possible_slots = 2
-
-/datum/advclass/mage/spellthief
-	maximum_possible_slots = 2
-
-/datum/advclass/noble/knighte
-	maximum_possible_slots = 2
-
-/datum/advclass/noble/squire
-	maximum_possible_slots = 2
-
-/datum/advclass/ranger/bombardier
-	maximum_possible_slots = 2
-
-/datum/advclass/rogue/thief
-	maximum_possible_slots = 2
-
-/datum/advclass/sfighter/barbarian
-	maximum_possible_slots = 2
-
-/datum/advclass/sfighter/deprived
-	maximum_possible_slots = 2
-
-/datum/advclass/sfighter/duelist
-	maximum_possible_slots = 2
-
-/datum/advclass/sfighter
-	maximum_possible_slots = 2
-
-/datum/advclass/sfighter/mhunter
-	maximum_possible_slots = 2
 
 /datum/job/roguetown/lamplighter
 	total_positions = 0
@@ -102,7 +34,6 @@
 
 /datum/advclass/cleric/paladin
 	allowed_patrons = ALL_DIVINE_PATRONS
-	maximum_possible_slots = 2
 
 /datum/advclass/cleric/cantor
 	allowed_patrons = list(
@@ -113,8 +44,6 @@
 		/datum/patron/divine/necra,
 		/datum/patron/divine/xylix,
 	)
-	maximum_possible_slots = 2
 
 /datum/advclass/cleric/missionary
 	allowed_patrons = ALL_DIVINE_PATRONS
-	maximum_possible_slots = 2
