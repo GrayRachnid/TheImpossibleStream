@@ -9,7 +9,7 @@
 		if(heretic_mind.heretic_path)
 			. += heretic_mind
 
-/// "<ckey> was <name> the <role> and died/survived", the same line the Villains tab uses.
+/// "<ckey> was <name> the <role> and died/survived", the same line the Villains tab uses. Anonymous players get "<name> the <role> died/survived" with no alias.
 /proc/greentext_mind_line(datum/mind/villain)
 	if(!villain?.current)
 		return "<b>Unknown Villain</b>"
@@ -19,7 +19,10 @@
 	else if(villain.assigned_role)
 		jobtext = " the <b>[villain.assigned_role]</b>"
 	var/fate = villain.current.stat == DEAD ? "<span style='color:#d9534f'>died</span>" : "<span style='color:#4ccf4c'>survived</span>"
-	return "<b>[get_display_ckey(villain.key)]</b> was <span style='color:#e6a962'><b>[villain.name]</b>[jobtext]</span> and [fate]"
+	var/character = "<span style='color:#e6a962'><b>[villain.name]</b>[jobtext]</span>"
+	if(ckey(villain.key) in GLOB.anonymize)
+		return "[character] [fate]"
+	return "<b>[get_display_ckey(villain.key)]</b> was [character] and [fate]"
 
 /proc/greentext_heretic_objectives(datum/heretic_path/path)
 	var/list/data = list()
